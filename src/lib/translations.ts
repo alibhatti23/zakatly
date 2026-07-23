@@ -5,6 +5,14 @@ export const TRANSLATIONS = {
     appTitle: "Zakatly",
     appSubtitle: "Free, accurate Zakat calculator",
 
+    navHome: "Calculator",
+    navAbout: "About",
+    navGuide: "Zakat Guide",
+    navPrivacy: "Privacy",
+    footerTagline: "Free and open source, with nothing sent to a server.",
+    footerGithub: "View source on GitHub",
+    footerRights: "Zakatly. Built to help, free for everyone.",
+
     nisabTitle: "Nisab setup",
     nisabDescription: "Enter today's gold and silver rate to work out your Nisab threshold.",
     nisabCurrency: "Currency",
@@ -87,6 +95,14 @@ export const TRANSLATIONS = {
   ur: {
     appTitle: "زکاتلی",
     appSubtitle: "مفت اور درست زکوٰۃ کیلکولیٹر",
+
+    navHome: "کیلکولیٹر",
+    navAbout: "تعارف",
+    navGuide: "زکوٰۃ گائیڈ",
+    navPrivacy: "پرائیویسی",
+    footerTagline: "مکمل طور پر مفت اور اوپن سورس، کوئی ڈیٹا سرور پر نہیں جاتا۔",
+    footerGithub: "GitHub پر سورس دیکھیں",
+    footerRights: "زکاتلی۔ مدد کے لیے بنایا گیا، سب کے لیے مفت۔",
 
     nisabTitle: "نصاب کی ترتیب",
     nisabDescription: "اپنا نصاب معلوم کرنے کے لیے آج کی سونے اور چاندی کی قیمت درج کریں۔",
