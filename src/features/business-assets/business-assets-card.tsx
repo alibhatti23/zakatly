@@ -17,6 +17,7 @@ export function BusinessAssetsCard() {
       onAdd={() => addAssetItem("businessAssets")}
       onUpdate={(id, updates) => updateAssetItem("businessAssets", id, updates)}
       onRemove={(id) => removeAssetItem("businessAssets", id)}
+      tooltipText="Trade inventory and receivables are zakatable since they are held for sale or expected to convert to cash."
     />
   )
 }

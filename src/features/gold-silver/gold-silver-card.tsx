@@ -1,3 +1,4 @@
+import { InfoTooltip } from "../../components/info-tooltip"
 import { useZakat } from "../../context/use-zakat"
 import { CURRENCY_OPTIONS, formatAmount } from "../../lib/currency"
 import { preciousMetalItemValue } from "../../lib/precious-metals"
@@ -16,7 +17,10 @@ export function GoldSilverCard() {
 
   return (
     <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 className="text-lg font-semibold text-slate-900">Gold and silver</h2>
+      <h2 className="flex items-center text-lg font-semibold text-slate-900">
+        Gold and silver
+        <InfoTooltip text="Gold and silver are zakatable regardless of use, based on the classical evidence specific to these two metals." />
+      </h2>
       <p className="mt-1 text-sm text-slate-500">
         Add jewelry, coins, and bars by weight. Value is worked out using the rate you set in
         Nisab setup.
