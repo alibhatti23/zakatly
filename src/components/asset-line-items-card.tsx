@@ -1,5 +1,6 @@
 import type { AssetLineItem, CurrencyOption } from "../types/zakat"
 import { formatAmount } from "../lib/currency"
+import { InfoTooltip } from "./info-tooltip"
 
 interface AssetLineItemsCardProps {
   title: string
@@ -11,6 +12,7 @@ interface AssetLineItemsCardProps {
   onAdd: () => void
   onUpdate: (id: string, updates: Partial<Omit<AssetLineItem, "id">>) => void
   onRemove: (id: string) => void
+  tooltipText?: string
 }
 
 export function AssetLineItemsCard({
@@ -23,12 +25,16 @@ export function AssetLineItemsCard({
   onAdd,
   onUpdate,
   onRemove,
+  tooltipText,
 }: AssetLineItemsCardProps) {
   const total = items.reduce((sum, item) => sum + item.amount, 0)
 
   return (
     <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 className="text-lg font-semibold text-slate-900">{title}</h2>
+      <h2 className="flex items-center text-lg font-semibold text-slate-900">
+        {title}
+        {tooltipText && <InfoTooltip text={tooltipText} />}
+      </h2>
       <p className="mt-1 text-sm text-slate-500">{description}</p>
 
       <div className="mt-5 flex flex-col gap-3">
