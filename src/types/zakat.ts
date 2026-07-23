@@ -19,3 +19,9 @@ export interface NisabState {
   goldPricePerGram: number | null
   silverPricePerGram: number | null
 }
+
+export interface AssetLineItem {
+  id: string
+  label: string
+  amount: number
+}

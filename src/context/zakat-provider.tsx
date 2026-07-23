@@ -1,5 +1,6 @@
 import { useMemo, useState, type ReactNode } from "react"
-import type { NisabState } from "../types/zakat"
+import { createId } from "../lib/id"
+import type { AssetLineItem, NisabState } from "../types/zakat"
 import { ZakatContext, type ZakatContextValue } from "./zakat-context"
 
 export function ZakatProvider({ children }: { children: ReactNode }) {
@@ -9,6 +10,8 @@ export function ZakatProvider({ children }: { children: ReactNode }) {
     silverPricePerGram: null,
   })
 
+  const [cashItems, setCashItems] = useState<AssetLineItem[]>([])
+
   const value = useMemo<ZakatContextValue>(
     () => ({
       nisab,
@@ -17,8 +20,17 @@ export function ZakatProvider({ children }: { children: ReactNode }) {
         setNisab((prev) => ({ ...prev, goldPricePerGram })),
       setSilverPricePerGram: (silverPricePerGram) =>
         setNisab((prev) => ({ ...prev, silverPricePerGram })),
+
+      cashItems,
+      addCashItem: () =>
+        setCashItems((prev) => [...prev, { id: createId(), label: "", amount: 0 }]),
+      updateCashItem: (id, updates) =>
+        setCashItems((prev) =>
+          prev.map((item) => (item.id === id ? { ...item, ...updates } : item)),
+        ),
+      removeCashItem: (id) => setCashItems((prev) => prev.filter((item) => item.id !== id)),
     }),
-    [nisab],
+    [nisab, cashItems],
   )
 
   return <ZakatContext.Provider value={value}>{children}</ZakatContext.Provider>
