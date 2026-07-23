@@ -17,6 +17,7 @@ export function InvestmentsCard() {
       onAdd={() => addAssetItem("investments")}
       onUpdate={(id, updates) => updateAssetItem("investments", id, updates)}
       onRemove={(id) => removeAssetItem("investments", id)}
+      tooltipText="Stocks, crypto, and sukuk held for growth or trading are zakatable at their current market value."
     />
   )
 }

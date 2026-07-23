@@ -25,6 +25,7 @@ export function ZakatProvider({ children }: { children: ReactNode }) {
     realEstate: [],
   })
   const [goldSilverItems, setGoldSilverItems] = useState<PreciousMetalItem[]>([])
+  const [liabilityItems, setLiabilityItems] = useState<AssetLineItem[]>([])
 
   const value = useMemo<ZakatContextValue>(
     () => ({
@@ -67,8 +68,18 @@ export function ZakatProvider({ children }: { children: ReactNode }) {
         ),
       removeGoldSilverItem: (id) =>
         setGoldSilverItems((prev) => prev.filter((item) => item.id !== id)),
+
+      liabilityItems,
+      addLiabilityItem: () =>
+        setLiabilityItems((prev) => [...prev, { id: createId(), label: "", amount: 0 }]),
+      updateLiabilityItem: (id, updates) =>
+        setLiabilityItems((prev) =>
+          prev.map((item) => (item.id === id ? { ...item, ...updates } : item)),
+        ),
+      removeLiabilityItem: (id) =>
+        setLiabilityItems((prev) => prev.filter((item) => item.id !== id)),
     }),
-    [nisab, assetCategories, goldSilverItems],
+    [nisab, assetCategories, goldSilverItems, liabilityItems],
   )
 
   return <ZakatContext.Provider value={value}>{children}</ZakatContext.Provider>

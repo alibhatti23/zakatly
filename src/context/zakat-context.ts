@@ -28,6 +28,11 @@ export interface ZakatContextValue {
   addGoldSilverItem: () => void
   updateGoldSilverItem: (id: string, updates: Partial<Omit<PreciousMetalItem, "id">>) => void
   removeGoldSilverItem: (id: string) => void
+
+  liabilityItems: AssetLineItem[]
+  addLiabilityItem: () => void
+  updateLiabilityItem: (id: string, updates: Partial<Omit<AssetLineItem, "id">>) => void
+  removeLiabilityItem: (id: string) => void
 }
 
 export const ZakatContext = createContext<ZakatContextValue | null>(null)
