@@ -2,6 +2,7 @@ import { ZakatProvider } from "./context/zakat-provider"
 import { NisabSetupCard } from "./features/nisab-setup/nisab-setup-card"
 import { CashAndBankCard } from "./features/cash-and-bank/cash-and-bank-card"
 import { GoldSilverCard } from "./features/gold-silver/gold-silver-card"
+import { FiqhStandardToggle } from "./features/fiqh-standard/fiqh-standard-toggle"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
 
         <main className="mx-auto flex max-w-3xl flex-col gap-6 px-4 py-10">
           <NisabSetupCard />
+          <FiqhStandardToggle />
           <CashAndBankCard />
           <GoldSilverCard />
         </main>

@@ -8,6 +8,7 @@ export function ZakatProvider({ children }: { children: ReactNode }) {
     currency: "PKR",
     goldPricePerGram: null,
     silverPricePerGram: null,
+    fiqhStandard: "gold",
   })
 
   const [cashItems, setCashItems] = useState<AssetLineItem[]>([])
@@ -21,6 +22,7 @@ export function ZakatProvider({ children }: { children: ReactNode }) {
         setNisab((prev) => ({ ...prev, goldPricePerGram })),
       setSilverPricePerGram: (silverPricePerGram) =>
         setNisab((prev) => ({ ...prev, silverPricePerGram })),
+      setFiqhStandard: (fiqhStandard) => setNisab((prev) => ({ ...prev, fiqhStandard })),
 
       cashItems,
       addCashItem: () =>

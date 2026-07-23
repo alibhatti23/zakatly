@@ -3,6 +3,7 @@ import type {
   AssetLineItem,
   CurrencyCode,
   NisabState,
+  PreciousMetal,
   PreciousMetalItem,
 } from "../types/zakat"
 
@@ -11,6 +12,7 @@ export interface ZakatContextValue {
   setCurrency: (currency: CurrencyCode) => void
   setGoldPricePerGram: (price: number | null) => void
   setSilverPricePerGram: (price: number | null) => void
+  setFiqhStandard: (standard: PreciousMetal) => void
 
   cashItems: AssetLineItem[]
   addCashItem: () => void

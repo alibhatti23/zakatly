@@ -14,10 +14,13 @@ export interface CurrencyOption {
   symbol: string
 }
 
+export type PreciousMetal = "gold" | "silver"
+
 export interface NisabState {
   currency: CurrencyCode
   goldPricePerGram: number | null
   silverPricePerGram: number | null
+  fiqhStandard: PreciousMetal
 }
 
 export interface AssetLineItem {
@@ -25,8 +28,6 @@ export interface AssetLineItem {
   label: string
   amount: number
 }
-
-export type PreciousMetal = "gold" | "silver"
 
 export interface PreciousMetalItem {
   id: string
