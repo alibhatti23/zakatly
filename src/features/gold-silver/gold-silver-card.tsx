@@ -1,3 +1,4 @@
+import { useLanguage } from "../../context/use-language"
 import { useZakat } from "../../context/use-zakat"
 import { CURRENCY_OPTIONS, formatAmount } from "../../lib/currency"
 import { preciousMetalItemValue } from "../../lib/precious-metals"
@@ -6,6 +7,7 @@ import type { PreciousMetal } from "../../types/zakat"
 export function GoldSilverCard() {
   const { nisab, goldSilverItems, addGoldSilverItem, updateGoldSilverItem, removeGoldSilverItem } =
     useZakat()
+  const { t } = useLanguage()
   const currency = CURRENCY_OPTIONS.find((option) => option.code === nisab.currency)!
   const hasRates = nisab.goldPricePerGram !== null || nisab.silverPricePerGram !== null
 
@@ -16,15 +18,12 @@ export function GoldSilverCard() {
 
   return (
     <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 className="text-lg font-semibold text-slate-900">Gold and silver</h2>
-      <p className="mt-1 text-sm text-slate-500">
-        Add jewelry, coins, and bars by weight. Value is worked out using the rate you set in
-        Nisab setup.
-      </p>
+      <h2 className="text-lg font-semibold text-slate-900">{t("goldSilverTitle")}</h2>
+      <p className="mt-1 text-sm text-slate-500">{t("goldSilverDescription")}</p>
 
       {!hasRates && (
         <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-700">
-          Set a gold or silver rate in Nisab setup above to see values here.
+          {t("goldSilverRatePrompt")}
         </p>
       )}
 
@@ -47,8 +46,8 @@ export function GoldSilverCard() {
                   updateGoldSilverItem(item.id, { metal: event.target.value as PreciousMetal })
                 }
               >
-                <option value="gold">Gold</option>
-                <option value="silver">Silver</option>
+                <option value="gold">{t("goldOption")}</option>
+                <option value="silver">{t("silverOption")}</option>
               </select>
               <input
                 type="number"
@@ -82,12 +81,12 @@ export function GoldSilverCard() {
           className="self-start rounded-lg border border-dashed border-slate-300 px-3 py-2 text-sm text-slate-600 hover:border-emerald-400 hover:text-emerald-700"
           onClick={addGoldSilverItem}
         >
-          Add gold or silver item
+          {t("goldSilverAddButton")}
         </button>
       </div>
 
       <div className="mt-5 rounded-lg bg-emerald-50 px-4 py-3">
-        <p className="text-xs font-medium uppercase tracking-wide text-emerald-700">Total</p>
+        <p className="text-xs font-medium uppercase tracking-wide text-emerald-700">{t("total")}</p>
         <p className="mt-1 text-base font-semibold text-emerald-800">
           {formatAmount(total, currency)}
         </p>

@@ -1,3 +1,4 @@
+import { useLanguage } from "../../context/use-language"
 import { useZakat } from "../../context/use-zakat"
 import { CURRENCY_OPTIONS, formatAmount } from "../../lib/currency"
 import { calculateGoldNisabValue, calculateSilverNisabValue } from "../../lib/nisab"
@@ -11,6 +12,7 @@ function parseRateInput(value: string): number | null {
 
 export function NisabSetupCard() {
   const { nisab, setCurrency, setGoldPricePerGram, setSilverPricePerGram } = useZakat()
+  const { t } = useLanguage()
   const currency = CURRENCY_OPTIONS.find((option) => option.code === nisab.currency)!
 
   const goldNisabValue =
@@ -22,14 +24,12 @@ export function NisabSetupCard() {
 
   return (
     <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 className="text-lg font-semibold text-slate-900">Nisab setup</h2>
-      <p className="mt-1 text-sm text-slate-500">
-        Enter today's gold and silver rate to work out your Nisab threshold.
-      </p>
+      <h2 className="text-lg font-semibold text-slate-900">{t("nisabTitle")}</h2>
+      <p className="mt-1 text-sm text-slate-500">{t("nisabDescription")}</p>
 
       <div className="mt-5 grid gap-4 sm:grid-cols-3">
         <label className="flex flex-col gap-1 text-sm font-medium text-slate-700">
-          Currency
+          {t("nisabCurrency")}
           <select
             className="rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
             value={nisab.currency}
@@ -44,7 +44,7 @@ export function NisabSetupCard() {
         </label>
 
         <label className="flex flex-col gap-1 text-sm font-medium text-slate-700">
-          Gold price per gram
+          {t("nisabGoldRate")}
           <input
             type="number"
             min="0"
@@ -57,7 +57,7 @@ export function NisabSetupCard() {
         </label>
 
         <label className="flex flex-col gap-1 text-sm font-medium text-slate-700">
-          Silver price per gram
+          {t("nisabSilverRate")}
           <input
             type="number"
             min="0"
@@ -73,20 +73,20 @@ export function NisabSetupCard() {
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
         <div className="rounded-lg bg-emerald-50 px-4 py-3">
           <p className="text-xs font-medium uppercase tracking-wide text-emerald-700">
-            Gold Nisab (87.48g)
+            {t("nisabGoldNisabLabel")}
           </p>
           <p className="mt-1 text-base font-semibold text-emerald-800">
-            {goldNisabValue !== null ? formatAmount(goldNisabValue, currency) : "Enter gold rate"}
+            {goldNisabValue !== null ? formatAmount(goldNisabValue, currency) : t("nisabEnterGold")}
           </p>
         </div>
         <div className="rounded-lg bg-slate-100 px-4 py-3">
           <p className="text-xs font-medium uppercase tracking-wide text-slate-600">
-            Silver Nisab (612.36g)
+            {t("nisabSilverNisabLabel")}
           </p>
           <p className="mt-1 text-base font-semibold text-slate-800">
             {silverNisabValue !== null
               ? formatAmount(silverNisabValue, currency)
-              : "Enter silver rate"}
+              : t("nisabEnterSilver")}
           </p>
         </div>
       </div>

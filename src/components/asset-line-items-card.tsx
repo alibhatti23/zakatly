@@ -1,4 +1,5 @@
 import type { AssetLineItem, CurrencyOption } from "../types/zakat"
+import { useLanguage } from "../context/use-language"
 import { formatAmount } from "../lib/currency"
 
 interface AssetLineItemsCardProps {
@@ -24,6 +25,7 @@ export function AssetLineItemsCard({
   onUpdate,
   onRemove,
 }: AssetLineItemsCardProps) {
+  const { t } = useLanguage()
   const total = items.reduce((sum, item) => sum + item.amount, 0)
 
   return (
@@ -74,7 +76,7 @@ export function AssetLineItemsCard({
       </div>
 
       <div className="mt-5 rounded-lg bg-emerald-50 px-4 py-3">
-        <p className="text-xs font-medium uppercase tracking-wide text-emerald-700">Total</p>
+        <p className="text-xs font-medium uppercase tracking-wide text-emerald-700">{t("total")}</p>
         <p className="mt-1 text-base font-semibold text-emerald-800">
           {formatAmount(total, currency)}
         </p>
