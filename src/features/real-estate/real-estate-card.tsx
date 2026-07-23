@@ -19,6 +19,7 @@ export function RealEstateCard() {
       onAdd={() => addAssetItem("realEstate")}
       onUpdate={(id, updates) => updateAssetItem("realEstate", id, updates)}
       onRemove={(id) => removeAssetItem("realEstate", id)}
+      tooltipText="Property held for investment or resale is zakatable at its market value. A primary residence is not."
     />
   )
 }

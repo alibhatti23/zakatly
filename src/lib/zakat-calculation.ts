@@ -14,6 +14,7 @@ export function goldSilverTotal(items: PreciousMetalItem[], nisab: NisabState): 
 export interface ZakatSummary {
   categoryTotals: Record<AssetCategoryKey, number>
   goldSilverTotal: number
+  liabilitiesTotal: number
   grandTotal: number
   nisabValue: number | null
   isDue: boolean
@@ -23,6 +24,7 @@ export interface ZakatSummary {
 export function summarizeZakat(
   assetCategories: Record<AssetCategoryKey, AssetLineItem[]>,
   metalItems: PreciousMetalItem[],
+  liabilityItems: AssetLineItem[],
   nisab: NisabState,
   nisabValue: number | null,
 ): ZakatSummary {
@@ -35,12 +37,14 @@ export function summarizeZakat(
 
   const categorySum = Object.values(categoryTotals).reduce((sum, value) => sum + value, 0)
   const metals = goldSilverTotal(metalItems, nisab)
-  const grandTotal = categorySum + metals
+  const liabilities = lineItemsTotal(liabilityItems)
+  const grandTotal = Math.max(0, categorySum + metals - liabilities)
   const isDue = nisabValue !== null && grandTotal >= nisabValue
 
   return {
     categoryTotals,
     goldSilverTotal: metals,
+    liabilitiesTotal: liabilities,
     grandTotal,
     nisabValue,
     isDue,

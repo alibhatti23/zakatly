@@ -8,6 +8,7 @@ import { GoldSilverCard } from "./features/gold-silver/gold-silver-card"
 import { InvestmentsCard } from "./features/investments/investments-card"
 import { BusinessAssetsCard } from "./features/business-assets/business-assets-card"
 import { RealEstateCard } from "./features/real-estate/real-estate-card"
+import { LiabilitiesCard } from "./features/liabilities/liabilities-card"
 import { FiqhStandardToggle } from "./features/fiqh-standard/fiqh-standard-toggle"
 import { ResultSummaryCard } from "./features/result-summary/result-summary-card"
 
@@ -34,6 +35,7 @@ function AppShell() {
         <InvestmentsCard />
         <BusinessAssetsCard />
         <RealEstateCard />
+        <LiabilitiesCard />
         <ResultSummaryCard />
       </main>
     </div>

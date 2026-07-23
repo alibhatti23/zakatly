@@ -1,3 +1,4 @@
+import { InfoTooltip } from "../../components/info-tooltip"
 import { useLanguage } from "../../context/use-language"
 import { useZakat } from "../../context/use-zakat"
 import { CURRENCY_OPTIONS, formatAmount } from "../../lib/currency"
@@ -18,7 +19,10 @@ export function GoldSilverCard() {
 
   return (
     <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 className="text-lg font-semibold text-slate-900">{t("goldSilverTitle")}</h2>
+      <h2 className="flex items-center text-lg font-semibold text-slate-900">
+        {t("goldSilverTitle")}
+        <InfoTooltip text={t("goldSilverTooltip")} />
+      </h2>
       <p className="mt-1 text-sm text-slate-500">{t("goldSilverDescription")}</p>
 
       {!hasRates && (

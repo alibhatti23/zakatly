@@ -19,6 +19,7 @@ export function CashAndBankCard() {
       onAdd={() => addAssetItem("cash")}
       onUpdate={(id, updates) => updateAssetItem("cash", id, updates)}
       onRemove={(id) => removeAssetItem("cash", id)}
+      tooltipText="Cash, savings, and bank balances are fully zakatable each year since they are held wealth, not fixed assets."
     />
   )
 }
