@@ -1,6 +1,8 @@
+import { useState } from "react"
 import { useLanguage } from "../../context/use-language"
 import { useZakat } from "../../context/use-zakat"
 import { CURRENCY_OPTIONS, formatAmount } from "../../lib/currency"
+import { fetchLiveMetalRates } from "../../lib/live-rates"
 import { calculateGoldNisabValue, calculateSilverNisabValue } from "../../lib/nisab"
 import type { CurrencyCode } from "../../types/zakat"
 
@@ -14,6 +16,7 @@ export function NisabSetupCard() {
   const { nisab, setCurrency, setGoldPricePerGram, setSilverPricePerGram } = useZakat()
   const { t } = useLanguage()
   const currency = CURRENCY_OPTIONS.find((option) => option.code === nisab.currency)!
+  const [fetchState, setFetchState] = useState<"idle" | "loading" | "error">("idle")
 
   const goldNisabValue =
     nisab.goldPricePerGram !== null ? calculateGoldNisabValue(nisab.goldPricePerGram) : null
@@ -21,6 +24,18 @@ export function NisabSetupCard() {
     nisab.silverPricePerGram !== null
       ? calculateSilverNisabValue(nisab.silverPricePerGram)
       : null
+
+  async function handleFetchLiveRates() {
+    setFetchState("loading")
+    const rates = await fetchLiveMetalRates()
+    if (rates === null) {
+      setFetchState("error")
+      return
+    }
+    setGoldPricePerGram(rates.goldPerGramUsd)
+    setSilverPricePerGram(rates.silverPerGramUsd)
+    setFetchState("idle")
+  }
 
   return (
     <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -68,6 +83,24 @@ export function NisabSetupCard() {
             onChange={(event) => setSilverPricePerGram(parseRateInput(event.target.value))}
           />
         </label>
+      </div>
+
+      <div className="mt-4">
+        {nisab.currency === "USD" ? (
+          <button
+            type="button"
+            disabled={fetchState === "loading"}
+            className="rounded-lg border border-emerald-300 bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700 hover:bg-emerald-100 disabled:cursor-not-allowed disabled:opacity-60"
+            onClick={handleFetchLiveRates}
+          >
+            {fetchState === "loading" ? t("nisabFetching") : t("nisabFetchLive")}
+          </button>
+        ) : (
+          <p className="text-xs text-slate-500">{t("nisabLiveUsdOnly")}</p>
+        )}
+        {fetchState === "error" && (
+          <p className="mt-2 text-xs text-red-600">{t("nisabFetchError")}</p>
+        )}
       </div>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2">

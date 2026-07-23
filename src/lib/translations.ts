@@ -14,6 +14,10 @@ export const TRANSLATIONS = {
     nisabSilverNisabLabel: "Silver Nisab (612.36g)",
     nisabEnterGold: "Enter gold rate",
     nisabEnterSilver: "Enter silver rate",
+    nisabFetchLive: "Fetch live rate (USD)",
+    nisabFetching: "Fetching live rate...",
+    nisabLiveUsdOnly: "Live rate fetch is only available when currency is set to USD.",
+    nisabFetchError: "Could not fetch live rates right now. Enter the rate manually instead.",
 
     fiqhTitle: "Fiqh standard toggle",
     fiqhDescription:
@@ -93,6 +97,10 @@ export const TRANSLATIONS = {
     nisabSilverNisabLabel: "چاندی کا نصاب (612.36 گرام)",
     nisabEnterGold: "سونے کی قیمت درج کریں",
     nisabEnterSilver: "چاندی کی قیمت درج کریں",
+    nisabFetchLive: "لائیو قیمت حاصل کریں (USD)",
+    nisabFetching: "لائیو قیمت حاصل کی جا رہی ہے...",
+    nisabLiveUsdOnly: "لائیو قیمت صرف USD کرنسی پر دستیاب ہے۔",
+    nisabFetchError: "ابھی لائیو قیمت حاصل نہیں ہو سکی۔ براہ کرم قیمت خود درج کریں۔",
 
     fiqhTitle: "فقہی معیار",
     fiqhDescription:
