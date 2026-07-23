@@ -3,6 +3,7 @@ import { NisabSetupCard } from "./features/nisab-setup/nisab-setup-card"
 import { CashAndBankCard } from "./features/cash-and-bank/cash-and-bank-card"
 import { GoldSilverCard } from "./features/gold-silver/gold-silver-card"
 import { InvestmentsCard } from "./features/investments/investments-card"
+import { BusinessAssetsCard } from "./features/business-assets/business-assets-card"
 import { FiqhStandardToggle } from "./features/fiqh-standard/fiqh-standard-toggle"
 import { ResultSummaryCard } from "./features/result-summary/result-summary-card"
 
@@ -23,6 +24,7 @@ function App() {
           <CashAndBankCard />
           <GoldSilverCard />
           <InvestmentsCard />
+          <BusinessAssetsCard />
           <ResultSummaryCard />
         </main>
       </div>
