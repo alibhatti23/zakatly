@@ -1,5 +1,10 @@
 import { createContext } from "react"
-import type { AssetLineItem, CurrencyCode, NisabState } from "../types/zakat"
+import type {
+  AssetLineItem,
+  CurrencyCode,
+  NisabState,
+  PreciousMetalItem,
+} from "../types/zakat"
 
 export interface ZakatContextValue {
   nisab: NisabState
@@ -11,6 +16,11 @@ export interface ZakatContextValue {
   addCashItem: () => void
   updateCashItem: (id: string, updates: Partial<Omit<AssetLineItem, "id">>) => void
   removeCashItem: (id: string) => void
+
+  goldSilverItems: PreciousMetalItem[]
+  addGoldSilverItem: () => void
+  updateGoldSilverItem: (id: string, updates: Partial<Omit<PreciousMetalItem, "id">>) => void
+  removeGoldSilverItem: (id: string) => void
 }
 
 export const ZakatContext = createContext<ZakatContextValue | null>(null)

@@ -25,3 +25,12 @@ export interface AssetLineItem {
   label: string
   amount: number
 }
+
+export type PreciousMetal = "gold" | "silver"
+
+export interface PreciousMetalItem {
+  id: string
+  label: string
+  metal: PreciousMetal
+  grams: number
+}
