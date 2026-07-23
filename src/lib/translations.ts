@@ -5,6 +5,21 @@ export const TRANSLATIONS = {
     appTitle: "Zakatly",
     appSubtitle: "Free, accurate Zakat calculator",
 
+    privacyTitle: "Privacy Policy",
+    privacyIntro: "Zakatly is built so your financial details stay private, by design.",
+    privacyNoServerHeading: "Nothing leaves your device",
+    privacyNoServerBody:
+      "Every calculation runs in your browser using JavaScript. The amounts you enter for cash, gold, investments, and everything else are never sent to a server or stored anywhere outside your device.",
+    privacyNoTrackingHeading: "No accounts, no tracking",
+    privacyNoTrackingBody:
+      "There is no sign-up, no analytics, and no tracking cookies. Using Zakatly does not create any record tied to you.",
+    privacyLiveRateHeading: "Live rate lookups",
+    privacyLiveRateBody:
+      "The one exception is the optional \"Fetch live rate\" button, which requests the current gold and silver price from a public price API. That request only asks for a price; none of your personal or financial data is included in it.",
+    privacyOpenSourceHeading: "Verify it yourself",
+    privacyOpenSourceBody:
+      "Since Zakatly is open source, you don't have to take our word for any of this. The full code is public on GitHub for anyone to read.",
+
     nisabTitle: "Nisab setup",
     nisabDescription: "Enter today's gold and silver rate to work out your Nisab threshold.",
     nisabCurrency: "Currency",
@@ -87,6 +102,21 @@ export const TRANSLATIONS = {
   ur: {
     appTitle: "زکاتلی",
     appSubtitle: "مفت اور درست زکوٰۃ کیلکولیٹر",
+
+    privacyTitle: "پرائیویسی پالیسی",
+    privacyIntro: "زکاتلی اس طرح بنایا گیا ہے کہ آپ کی مالی تفصیلات مکمل طور پر نجی رہیں۔",
+    privacyNoServerHeading: "کچھ بھی آپ کی ڈیوائس سے باہر نہیں جاتا",
+    privacyNoServerBody:
+      "ہر حساب آپ کے براؤزر میں JavaScript کے ذریعے ہوتا ہے۔ نقدی، سونا، سرمایہ کاری اور باقی سب کچھ جو آپ درج کرتے ہیں، کبھی کسی سرور پر نہیں بھیجا جاتا اور نہ ہی آپ کی ڈیوائس سے باہر کہیں محفوظ ہوتا ہے۔",
+    privacyNoTrackingHeading: "کوئی اکاؤنٹ نہیں، کوئی ٹریکنگ نہیں",
+    privacyNoTrackingBody:
+      "کوئی سائن اپ، کوئی اینالیٹکس، اور کوئی ٹریکنگ کوکیز نہیں ہیں۔ زکاتلی استعمال کرنے سے آپ سے جڑا کوئی ریکارڈ نہیں بنتا۔",
+    privacyLiveRateHeading: "لائیو ریٹ لُک اپ",
+    privacyLiveRateBody:
+      "صرف ایک استثناء \"لائیو قیمت حاصل کریں\" بٹن ہے، جو ایک عوامی پرائس API سے سونے اور چاندی کی موجودہ قیمت طلب کرتا ہے۔ اس درخواست میں صرف قیمت مانگی جاتی ہے؛ آپ کی کوئی ذاتی یا مالی معلومات شامل نہیں ہوتیں۔",
+    privacyOpenSourceHeading: "خود تصدیق کریں",
+    privacyOpenSourceBody:
+      "چونکہ زکاتلی اوپن سورس ہے، آپ کو ہماری بات پر اعتماد کرنے کی ضرورت نہیں۔ مکمل کوڈ GitHub پر عوامی ہے تاکہ کوئی بھی اسے پڑھ سکے۔",
 
     nisabTitle: "نصاب کی ترتیب",
     nisabDescription: "اپنا نصاب معلوم کرنے کے لیے آج کی سونے اور چاندی کی قیمت درج کریں۔",
