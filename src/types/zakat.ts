@@ -29,6 +29,8 @@ export interface AssetLineItem {
   amount: number
 }
 
+export type AssetCategoryKey = "cash" | "investments"
+
 export interface PreciousMetalItem {
   id: string
   label: string

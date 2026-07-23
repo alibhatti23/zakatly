@@ -1,5 +1,6 @@
 import { createContext } from "react"
 import type {
+  AssetCategoryKey,
   AssetLineItem,
   CurrencyCode,
   NisabState,
@@ -14,10 +15,14 @@ export interface ZakatContextValue {
   setSilverPricePerGram: (price: number | null) => void
   setFiqhStandard: (standard: PreciousMetal) => void
 
-  cashItems: AssetLineItem[]
-  addCashItem: () => void
-  updateCashItem: (id: string, updates: Partial<Omit<AssetLineItem, "id">>) => void
-  removeCashItem: (id: string) => void
+  assetCategories: Record<AssetCategoryKey, AssetLineItem[]>
+  addAssetItem: (category: AssetCategoryKey) => void
+  updateAssetItem: (
+    category: AssetCategoryKey,
+    id: string,
+    updates: Partial<Omit<AssetLineItem, "id">>,
+  ) => void
+  removeAssetItem: (category: AssetCategoryKey, id: string) => void
 
   goldSilverItems: PreciousMetalItem[]
   addGoldSilverItem: () => void

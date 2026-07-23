@@ -1,13 +1,14 @@
 import { useZakat } from "../../context/use-zakat"
+import { ASSET_CATEGORY_LABELS, ASSET_CATEGORY_ORDER } from "../../lib/asset-categories"
 import { CURRENCY_OPTIONS, formatAmount } from "../../lib/currency"
 import { activeNisabValue } from "../../lib/nisab"
 import { summarizeZakat } from "../../lib/zakat-calculation"
 
 export function ResultSummaryCard() {
-  const { nisab, cashItems, goldSilverItems } = useZakat()
+  const { nisab, assetCategories, goldSilverItems } = useZakat()
   const currency = CURRENCY_OPTIONS.find((option) => option.code === nisab.currency)!
   const nisabValue = activeNisabValue(nisab)
-  const summary = summarizeZakat(cashItems, goldSilverItems, nisab, nisabValue)
+  const summary = summarizeZakat(assetCategories, goldSilverItems, nisab, nisabValue)
 
   return (
     <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -17,12 +18,14 @@ export function ResultSummaryCard() {
       </p>
 
       <dl className="mt-5 divide-y divide-slate-100 text-sm">
-        <div className="flex justify-between py-2">
-          <dt className="text-slate-500">Cash and bank</dt>
-          <dd className="font-medium text-slate-800">
-            {formatAmount(summary.cashTotal, currency)}
-          </dd>
-        </div>
+        {ASSET_CATEGORY_ORDER.map((category) => (
+          <div key={category} className="flex justify-between py-2">
+            <dt className="text-slate-500">{ASSET_CATEGORY_LABELS[category]}</dt>
+            <dd className="font-medium text-slate-800">
+              {formatAmount(summary.categoryTotals[category], currency)}
+            </dd>
+          </div>
+        ))}
         <div className="flex justify-between py-2">
           <dt className="text-slate-500">Gold and silver</dt>
           <dd className="font-medium text-slate-800">
