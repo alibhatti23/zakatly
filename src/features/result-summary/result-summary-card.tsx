@@ -5,10 +5,10 @@ import { activeNisabValue } from "../../lib/nisab"
 import { summarizeZakat } from "../../lib/zakat-calculation"
 
 export function ResultSummaryCard() {
-  const { nisab, assetCategories, goldSilverItems } = useZakat()
+  const { nisab, assetCategories, goldSilverItems, liabilityItems } = useZakat()
   const currency = CURRENCY_OPTIONS.find((option) => option.code === nisab.currency)!
   const nisabValue = activeNisabValue(nisab)
-  const summary = summarizeZakat(assetCategories, goldSilverItems, nisab, nisabValue)
+  const summary = summarizeZakat(assetCategories, goldSilverItems, liabilityItems, nisab, nisabValue)
 
   return (
     <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -30,6 +30,12 @@ export function ResultSummaryCard() {
           <dt className="text-slate-500">Gold and silver</dt>
           <dd className="font-medium text-slate-800">
             {formatAmount(summary.goldSilverTotal, currency)}
+          </dd>
+        </div>
+        <div className="flex justify-between py-2">
+          <dt className="text-slate-500">Liabilities</dt>
+          <dd className="font-medium text-red-600">
+            − {formatAmount(summary.liabilitiesTotal, currency)}
           </dd>
         </div>
         <div className="flex justify-between py-2">
