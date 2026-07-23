@@ -5,6 +5,19 @@ export const TRANSLATIONS = {
     appTitle: "Zakatly",
     appSubtitle: "Free, accurate Zakat calculator",
 
+    aboutTitle: "About Zakatly",
+    aboutIntro:
+      "Zakatly is a free, open source Zakat calculator built to help Muslims work out their annual Zakat accurately, without ads, accounts, or paywalls.",
+    aboutWhyFreeHeading: "Why it's free",
+    aboutWhyFreeBody:
+      "Calculating Zakat correctly shouldn't depend on paying for an app or sitting through ads. Zakatly is maintained as a volunteer project so anyone, anywhere, can use it at no cost.",
+    aboutOpenSourceHeading: "Open source",
+    aboutOpenSourceBody:
+      "The full source code is public on GitHub. Anyone can read it, verify how the calculations work, suggest improvements, or contribute a new feature.",
+    aboutPrivacyHeading: "Built with privacy in mind",
+    aboutPrivacyBody:
+      "Every number you enter stays in your browser. Nothing is uploaded to a server, so your financial details never leave your device. See the Privacy Policy for details.",
+
     nisabTitle: "Nisab setup",
     nisabDescription: "Enter today's gold and silver rate to work out your Nisab threshold.",
     nisabCurrency: "Currency",
@@ -87,6 +100,19 @@ export const TRANSLATIONS = {
   ur: {
     appTitle: "زکاتلی",
     appSubtitle: "مفت اور درست زکوٰۃ کیلکولیٹر",
+
+    aboutTitle: "زکاتلی کے بارے میں",
+    aboutIntro:
+      "زکاتلی ایک مفت، اوپن سورس زکوٰۃ کیلکولیٹر ہے جو مسلمانوں کو بغیر اشتہارات، اکاؤنٹ، یا فیس کے اپنی سالانہ زکوٰۃ درست طریقے سے معلوم کرنے میں مدد دیتا ہے۔",
+    aboutWhyFreeHeading: "یہ مفت کیوں ہے",
+    aboutWhyFreeBody:
+      "زکوٰۃ کا درست حساب کسی ایپ کی قیمت ادا کرنے یا اشتہارات دیکھنے پر منحصر نہیں ہونا چاہیے۔ زکاتلی رضاکارانہ طور پر برقرار رکھا جاتا ہے تاکہ ہر کوئی اسے مفت استعمال کر سکے۔",
+    aboutOpenSourceHeading: "اوپن سورس",
+    aboutOpenSourceBody:
+      "مکمل سورس کوڈ GitHub پر عوامی ہے۔ کوئی بھی اسے پڑھ سکتا ہے، حساب کتاب کی تصدیق کر سکتا ہے، بہتری تجویز کر سکتا ہے، یا نیا فیچر شامل کر سکتا ہے۔",
+    aboutPrivacyHeading: "پرائیویسی کو مدنظر رکھ کر بنایا گیا",
+    aboutPrivacyBody:
+      "آپ کی درج کی گئی ہر رقم آپ کے براؤزر میں ہی رہتی ہے۔ کچھ بھی سرور پر نہیں بھیجا جاتا، اس لیے آپ کی مالی تفصیلات کبھی آپ کی ڈیوائس سے باہر نہیں جاتیں۔ تفصیلات کے لیے پرائیویسی پالیسی دیکھیں۔",
 
     nisabTitle: "نصاب کی ترتیب",
     nisabDescription: "اپنا نصاب معلوم کرنے کے لیے آج کی سونے اور چاندی کی قیمت درج کریں۔",
