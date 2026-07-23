@@ -1,4 +1,4 @@
-import type { AssetLineItem, NisabState, PreciousMetalItem } from "../types/zakat"
+import type { AssetCategoryKey, AssetLineItem, NisabState, PreciousMetalItem } from "../types/zakat"
 import { preciousMetalItemValue } from "./precious-metals"
 
 export const ZAKAT_RATE = 0.025
@@ -12,7 +12,7 @@ export function goldSilverTotal(items: PreciousMetalItem[], nisab: NisabState): 
 }
 
 export interface ZakatSummary {
-  cashTotal: number
+  categoryTotals: Record<AssetCategoryKey, number>
   goldSilverTotal: number
   grandTotal: number
   nisabValue: number | null
@@ -21,18 +21,25 @@ export interface ZakatSummary {
 }
 
 export function summarizeZakat(
-  cashItems: AssetLineItem[],
+  assetCategories: Record<AssetCategoryKey, AssetLineItem[]>,
   metalItems: PreciousMetalItem[],
   nisab: NisabState,
   nisabValue: number | null,
 ): ZakatSummary {
-  const cash = lineItemsTotal(cashItems)
+  const categoryTotals = Object.fromEntries(
+    Object.entries(assetCategories).map(([category, items]) => [
+      category,
+      lineItemsTotal(items),
+    ]),
+  ) as Record<AssetCategoryKey, number>
+
+  const categorySum = Object.values(categoryTotals).reduce((sum, value) => sum + value, 0)
   const metals = goldSilverTotal(metalItems, nisab)
-  const grandTotal = cash + metals
+  const grandTotal = categorySum + metals
   const isDue = nisabValue !== null && grandTotal >= nisabValue
 
   return {
-    cashTotal: cash,
+    categoryTotals,
     goldSilverTotal: metals,
     grandTotal,
     nisabValue,

@@ -2,6 +2,7 @@ import { ZakatProvider } from "./context/zakat-provider"
 import { NisabSetupCard } from "./features/nisab-setup/nisab-setup-card"
 import { CashAndBankCard } from "./features/cash-and-bank/cash-and-bank-card"
 import { GoldSilverCard } from "./features/gold-silver/gold-silver-card"
+import { InvestmentsCard } from "./features/investments/investments-card"
 import { FiqhStandardToggle } from "./features/fiqh-standard/fiqh-standard-toggle"
 import { ResultSummaryCard } from "./features/result-summary/result-summary-card"
 
@@ -21,6 +22,7 @@ function App() {
           <FiqhStandardToggle />
           <CashAndBankCard />
           <GoldSilverCard />
+          <InvestmentsCard />
           <ResultSummaryCard />
         </main>
       </div>

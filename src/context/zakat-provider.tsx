@@ -1,6 +1,11 @@
 import { useMemo, useState, type ReactNode } from "react"
 import { createId } from "../lib/id"
-import type { AssetLineItem, NisabState, PreciousMetalItem } from "../types/zakat"
+import type {
+  AssetCategoryKey,
+  AssetLineItem,
+  NisabState,
+  PreciousMetalItem,
+} from "../types/zakat"
 import { ZakatContext, type ZakatContextValue } from "./zakat-context"
 
 export function ZakatProvider({ children }: { children: ReactNode }) {
@@ -11,7 +16,12 @@ export function ZakatProvider({ children }: { children: ReactNode }) {
     fiqhStandard: "gold",
   })
 
-  const [cashItems, setCashItems] = useState<AssetLineItem[]>([])
+  const [assetCategories, setAssetCategories] = useState<
+    Record<AssetCategoryKey, AssetLineItem[]>
+  >({
+    cash: [],
+    investments: [],
+  })
   const [goldSilverItems, setGoldSilverItems] = useState<PreciousMetalItem[]>([])
 
   const value = useMemo<ZakatContextValue>(
@@ -24,14 +34,24 @@ export function ZakatProvider({ children }: { children: ReactNode }) {
         setNisab((prev) => ({ ...prev, silverPricePerGram })),
       setFiqhStandard: (fiqhStandard) => setNisab((prev) => ({ ...prev, fiqhStandard })),
 
-      cashItems,
-      addCashItem: () =>
-        setCashItems((prev) => [...prev, { id: createId(), label: "", amount: 0 }]),
-      updateCashItem: (id, updates) =>
-        setCashItems((prev) =>
-          prev.map((item) => (item.id === id ? { ...item, ...updates } : item)),
-        ),
-      removeCashItem: (id) => setCashItems((prev) => prev.filter((item) => item.id !== id)),
+      assetCategories,
+      addAssetItem: (category) =>
+        setAssetCategories((prev) => ({
+          ...prev,
+          [category]: [...prev[category], { id: createId(), label: "", amount: 0 }],
+        })),
+      updateAssetItem: (category, id, updates) =>
+        setAssetCategories((prev) => ({
+          ...prev,
+          [category]: prev[category].map((item) =>
+            item.id === id ? { ...item, ...updates } : item,
+          ),
+        })),
+      removeAssetItem: (category, id) =>
+        setAssetCategories((prev) => ({
+          ...prev,
+          [category]: prev[category].filter((item) => item.id !== id),
+        })),
 
       goldSilverItems,
       addGoldSilverItem: () =>
@@ -46,7 +66,7 @@ export function ZakatProvider({ children }: { children: ReactNode }) {
       removeGoldSilverItem: (id) =>
         setGoldSilverItems((prev) => prev.filter((item) => item.id !== id)),
     }),
-    [nisab, cashItems, goldSilverItems],
+    [nisab, assetCategories, goldSilverItems],
   )
 
   return <ZakatContext.Provider value={value}>{children}</ZakatContext.Provider>
