@@ -3,6 +3,7 @@ import { NisabSetupCard } from "./features/nisab-setup/nisab-setup-card"
 import { CashAndBankCard } from "./features/cash-and-bank/cash-and-bank-card"
 import { GoldSilverCard } from "./features/gold-silver/gold-silver-card"
 import { FiqhStandardToggle } from "./features/fiqh-standard/fiqh-standard-toggle"
+import { ResultSummaryCard } from "./features/result-summary/result-summary-card"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <FiqhStandardToggle />
           <CashAndBankCard />
           <GoldSilverCard />
+          <ResultSummaryCard />
         </main>
       </div>
     </ZakatProvider>
