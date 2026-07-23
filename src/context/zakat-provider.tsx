@@ -22,6 +22,7 @@ export function ZakatProvider({ children }: { children: ReactNode }) {
     cash: [],
     investments: [],
     businessAssets: [],
+    realEstate: [],
   })
   const [goldSilverItems, setGoldSilverItems] = useState<PreciousMetalItem[]>([])
 

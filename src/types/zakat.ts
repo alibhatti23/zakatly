@@ -29,7 +29,7 @@ export interface AssetLineItem {
   amount: number
 }
 
-export type AssetCategoryKey = "cash" | "investments" | "businessAssets"
+export type AssetCategoryKey = "cash" | "investments" | "businessAssets" | "realEstate"
 
 export interface PreciousMetalItem {
   id: string
