@@ -5,6 +5,14 @@ export const TRANSLATIONS = {
     appTitle: "Zakatly",
     appSubtitle: "Free, accurate Zakat calculator",
 
+    navHome: "Calculator",
+    navAbout: "About",
+    navGuide: "Zakat Guide",
+    navPrivacy: "Privacy",
+    footerTagline: "Free and open source, with nothing sent to a server.",
+    footerGithub: "View source on GitHub",
+    footerRights: "Zakatly. Built to help, free for everyone.",
+
     aboutTitle: "About Zakatly",
     aboutIntro:
       "Zakatly is a free, open source Zakat calculator built to help Muslims work out their annual Zakat accurately, without ads, accounts, or paywalls.",
@@ -100,6 +108,14 @@ export const TRANSLATIONS = {
   ur: {
     appTitle: "زکاتلی",
     appSubtitle: "مفت اور درست زکوٰۃ کیلکولیٹر",
+
+    navHome: "کیلکولیٹر",
+    navAbout: "تعارف",
+    navGuide: "زکوٰۃ گائیڈ",
+    navPrivacy: "پرائیویسی",
+    footerTagline: "مکمل طور پر مفت اور اوپن سورس، کوئی ڈیٹا سرور پر نہیں جاتا۔",
+    footerGithub: "GitHub پر سورس دیکھیں",
+    footerRights: "زکاتلی۔ مدد کے لیے بنایا گیا، سب کے لیے مفت۔",
 
     aboutTitle: "زکاتلی کے بارے میں",
     aboutIntro:
