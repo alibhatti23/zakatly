@@ -26,6 +26,27 @@ export const TRANSLATIONS = {
     aboutPrivacyBody:
       "Every number you enter stays in your browser. Nothing is uploaded to a server, so your financial details never leave your device. See the Privacy Policy for details.",
 
+    guideTitle: "Zakat Guide",
+    guideIntro: "Plain-language answers to the questions people ask most about Zakat.",
+    guideQ1: "What is Zakat?",
+    guideA1:
+      "Zakat is an obligatory annual payment of 2.5% on wealth that has stayed above the Nisab threshold for a full lunar year, given to those entitled to receive it.",
+    guideQ2: "What is Nisab?",
+    guideA2:
+      "Nisab is the minimum amount of wealth someone must have before Zakat becomes due. It is set as the value of 87.48g of gold or 612.36g of silver; you can pick either basis in the calculator.",
+    guideQ3: "Which assets are zakatable?",
+    guideA3:
+      "Cash and bank balances, gold and silver, investments like stocks and crypto, business inventory and receivables, and property held for investment or resale. Short-term debts are deducted from the total first.",
+    guideQ4: "What is not zakatable?",
+    guideA4:
+      "Your primary home, personal-use vehicles, and everyday household items are not zakatable. They are excluded from every category in this calculator.",
+    guideQ5: "Should I use the gold or silver Nisab?",
+    guideA5:
+      "Both are classical, accepted standards. The silver Nisab is a lower amount, so some scholars prefer it as more precautionary since it makes more wealth zakatable, which benefits the poor. The choice is yours in the Fiqh standard toggle.",
+    guideQ6: "Is this a substitute for asking a scholar?",
+    guideA6:
+      "No. This calculator is a tool to help with the arithmetic. For your specific situation, especially anything unusual, please confirm with a qualified scholar.",
+
     privacyTitle: "Privacy Policy",
     privacyIntro: "Zakatly is built so your financial details stay private, by design.",
     privacyNoServerHeading: "Nothing leaves your device",
@@ -144,6 +165,27 @@ export const TRANSLATIONS = {
     aboutPrivacyHeading: "پرائیویسی کو مدنظر رکھ کر بنایا گیا",
     aboutPrivacyBody:
       "آپ کی درج کی گئی ہر رقم آپ کے براؤزر میں ہی رہتی ہے۔ کچھ بھی سرور پر نہیں بھیجا جاتا، اس لیے آپ کی مالی تفصیلات کبھی آپ کی ڈیوائس سے باہر نہیں جاتیں۔ تفصیلات کے لیے پرائیویسی پالیسی دیکھیں۔",
+
+    guideTitle: "زکوٰۃ گائیڈ",
+    guideIntro: "زکوٰۃ کے بارے میں سب سے زیادہ پوچھے جانے والے سوالات کے آسان جوابات۔",
+    guideQ1: "زکوٰۃ کیا ہے؟",
+    guideA1:
+      "زکوٰۃ اس دولت پر 2.5% کی سالانہ لازمی ادائیگی ہے جو ایک مکمل قمری سال تک نصاب سے زیادہ رہی ہو، اور یہ حقداروں کو دی جاتی ہے۔",
+    guideQ2: "نصاب کیا ہے؟",
+    guideA2:
+      "نصاب وہ کم از کم دولت ہے جس کے بعد زکوٰۃ واجب ہوتی ہے۔ یہ 87.48 گرام سونے یا 612.36 گرام چاندی کی مالیت کے برابر مقرر ہے؛ آپ کیلکولیٹر میں کوئی بھی بنیاد منتخب کر سکتے ہیں۔",
+    guideQ3: "کن اثاثوں پر زکوٰۃ واجب ہے؟",
+    guideA3:
+      "نقدی اور بینک بیلنس، سونا اور چاندی، حصص اور کرپٹو جیسی سرمایہ کاری، کاروباری سٹاک اور واجبات، اور سرمایہ کاری یا فروخت کے لیے رکھی گئی جائیداد۔ قلیل مدتی قرض پہلے کل رقم سے منہا کیے جاتے ہیں۔",
+    guideQ4: "کن چیزوں پر زکوٰۃ واجب نہیں؟",
+    guideA4:
+      "آپ کا ذاتی گھر، ذاتی استعمال کی گاڑیاں، اور روزمرہ گھریلو اشیاء زکوٰۃ کے قابل نہیں۔ انہیں اس کیلکولیٹر کی ہر کیٹگری سے خارج رکھا گیا ہے۔",
+    guideQ5: "سونے یا چاندی کا نصاب استعمال کروں؟",
+    guideA5:
+      "دونوں مستند اور معتبر معیار ہیں۔ چاندی کا نصاب کم ہوتا ہے، اس لیے کچھ علماء اسے زیادہ احتیاطی سمجھتے ہیں کیونکہ اس سے زیادہ دولت زکوٰۃ کے قابل ہوتی ہے، جو غریبوں کے لیے فائدہ مند ہے۔ انتخاب فقہی معیار ٹوگل میں آپ کا اپنا ہے۔",
+    guideQ6: "کیا یہ عالم سے پوچھنے کا متبادل ہے؟",
+    guideA6:
+      "نہیں۔ یہ کیلکولیٹر صرف حساب کتاب میں مدد کے لیے ایک آلہ ہے۔ اپنی مخصوص صورتحال کے لیے، خاص طور پر کسی غیر معمولی معاملے میں، کسی مستند عالم سے ضرور تصدیق کریں۔",
 
     privacyTitle: "پرائیویسی پالیسی",
     privacyIntro: "زکاتلی اس طرح بنایا گیا ہے کہ آپ کی مالی تفصیلات مکمل طور پر نجی رہیں۔",
